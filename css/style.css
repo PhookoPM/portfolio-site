@@ -85,6 +85,68 @@ header{
     color: var(--main-color);
     display: none;
 }
+
+section{
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15rem;  
+}
+
+.about-content{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+span{
+    color: var(--main-color);
+    /* text-shadow: 0 0 15px var(--text-color); */
+}
+.logo span{
+    color: var(--main-color);
+    /* text-shadow: 0 0 15px var(--text-color); */
+}
+
+.about-content h3{
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.about-content h1{
+    font-size: 7rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+
+.about-img{
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-img img{
+    position: relative;
+    top: 3rem;
+    width: 32vw;
+    height: 32vw;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
 .btn {
     display: inline-flex;
     align-items: center;
@@ -96,4 +158,5 @@ header{
     width: 16px; /* Adjust size as needed */
     height: 16px;
     margin-right: 8px; /* Add spacing between the icon and text */
+    color: var(--bg-color);
 }
