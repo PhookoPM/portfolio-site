@@ -214,9 +214,41 @@ span{
     background-color: var(--main-color);
     color: black;
 }
-.pointer-icon {
-    width: 16px; /* Adjust size as needed */
-    height: 16px;
-    margin-right: 8px; /* Add spacing between the icon and text */
-    color: var(--bg-color);
+.text-animation{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
 }
+.text-animation span{
+    position: relative;
+}
+.text-animation span::before{
+    content: attr(data-text);
+    position: absolute;
+    color: var(--main-color);
+    animation: animate 4s linear infinite;
+}
+.text-animation span::after {
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor {
+    0%, 100% { border-left-color: transparent; }
+    50% { border-left-color: var(--main-color); }
+}
+
+/*  
+.pointer-icon {
+    width: 16px; 
+    height: 16px;
+    margin-right: 8px; 
+    color: var(--bg-color);
+} 
+  */
