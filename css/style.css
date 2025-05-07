@@ -235,7 +235,7 @@ span{
     width: calc(100% + 20px);
     height: 100%;
     border-left: 3px solid var(--bg-color);
-    right: -2px;
+    right: -15px;
     animation: cursor 0.6s infinite;
 }
 
