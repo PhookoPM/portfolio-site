@@ -192,7 +192,7 @@ span{
     transition: 0.3s ease-in-out;
     cursor: pointer;
     text-decoration: none;
-    /* color: inherit; */
+    /* color: inherit;  */
 }
 .btn:hover{
     transform: scale(1.05);
@@ -235,7 +235,7 @@ span{
     width: calc(100% + 20px);
     height: 100%;
     border-left: 3px solid var(--bg-color);
-    right: -15px;
+    right: -25px;
     animation: cursor 0.6s infinite;
 }
 
