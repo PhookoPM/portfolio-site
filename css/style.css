@@ -232,10 +232,10 @@ span{
     content: "";
     background-color: var(--bg-color);
     position: absolute;
-    width: calc(100% + 8px);
+    width: calc(100% + 20px);
     height: 100%;
     border-left: 3px solid var(--bg-color);
-    right: -8px;
+    right: -2px;
     animation: cursor 0.6s infinite;
 }
 
