@@ -3,36 +3,30 @@ const text = document.querySelectorAll('.text-animation span');
 const frontendTools = ["HTML", "CSS", "NextJS", "Tailwind CSS"];
 const serverTools = ["C#", ".NET", "Python (Django)"];
 
-function typeText(elementId, words, speed = 150) {
-  let i = 0, j = 0, current = '';
-  const element = document.getElementById(elementId);
+function typeText(id, words, speed = 100, pause = 1500) {
+  const el = document.getElementById(id);
+  let i = 0;
 
-  function type() {
-    if (j === words[i].length) {
-      setTimeout(() => erase(), 1000);
-    } else {
-      current += words[i][j];
-      element.setAttribute("data-text", current);
+  function typeNextWord() {
+    const word = words[i];
+    let j = 0;
+    el.setAttribute("data-text", "");
+
+    const typing = setInterval(() => {
+      el.setAttribute("data-text", word.substring(0, j + 1));
       j++;
-      setTimeout(type, speed);
-    }
+      if (j === word.length) {
+        clearInterval(typing);
+        setTimeout(() => {
+          i = (i + 1) % words.length;
+          typeNextWord();
+        }, pause);
+      }
+    }, speed);
   }
 
-  function erase() {
-    if (j === 0) {
-      i = (i + 1) % words.length;
-      setTimeout(type, speed);
-    } else {
-      current = current.slice(0, -1);
-      element.setAttribute("data-text", current);
-      j--;
-      setTimeout(erase, speed / 2);
-    }
-  }
-
-  type();
+  typeNextWord();
 }
 
 typeText("frontend-text", frontendTools);
 typeText("server-text", serverTools);
-
