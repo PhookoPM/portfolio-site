@@ -1,4 +1,4 @@
-const text = document.querySelectorAll('.text-animation span');
+// const text = document.querySelectorAll('.text-animation span');
 // This script handles the typing effect for the frontend and server tools sections
 const frontendTools = ["HTML", "CSS", "NextJS", "Tailwind CSS"];
 const serverTools = ["C#", ".NET", "Python (Django)"];
