@@ -1,32 +1,40 @@
-// const text = document.querySelectorAll('.text-animation span');
-// This script handles the typing effect for the frontend and server tools sections
-const frontendTools = ["HTML", "CSS", "NextJS", "Tailwind CSS"];
-const serverTools = ["C#", ".NET", "Python (Django)"];
+const frontendTools = ["HTML", "CSS", "Next.js", "Tailwind CSS"];
+const serverTools = ["C#", ".NET", "Python (Django)", "SQL"];
 
-function typeText(id, words, speed = 100, pause = 1500) {
-  const el = document.getElementById(id);
-  let i = 0;
-
-  function typeNextWord() {
-    const word = words[i];
+const typeWriter = (elementId, words, delay = 150, wait = 2000) => {
+    let i = 0;
     let j = 0;
-    el.setAttribute("data-text", "");
+    let currentWord = '';
+    let isDeleting = false;
+    const element = document.getElementById(elementId);
 
-    const typing = setInterval(() => {
-      el.setAttribute("data-text", word.substring(0, j + 1));
-      j++;
-      if (j === word.length) {
-        clearInterval(typing);
-        setTimeout(() => {
-          i = (i + 1) % words.length;
-          typeNextWord();
-        }, pause);
-      }
-    }, speed);
-  }
+    const type = () => {
+        currentWord = words[i];
 
-  typeNextWord();
-}
+        if (isDeleting) {
+            j--;
+        } else {
+            j++;
+        }
 
-typeText("frontend-text", frontendTools);
-typeText("server-text", serverTools);
+        element.textContent = currentWord.substring(0, j);
+
+        if (!isDeleting && j === currentWord.length) {
+            isDeleting = true;
+            setTimeout(type, wait);
+        } else if (isDeleting && j === 0) {
+            isDeleting = false;
+            i = (i + 1) % words.length;
+            setTimeout(type, 500);
+        } else {
+            setTimeout(type, isDeleting ? delay / 2 : delay);
+        }
+    };
+
+    type();
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    typeWriter("frontend-text", frontendTools);
+    typeWriter("server-text", serverTools);
+});
