@@ -239,153 +239,541 @@ span{
     50% { border-color: var(--main-color); }
 }
 
-/* .text-animation {
-    font-size: 34px;
-    font-weight: 600;
-    min-width: 280px;
+.heading{
+    font-size: 4rem;
+    text-align: center;
+    margin: 5rem 0;
 }
-.animation-text {
-    font-size: 34px;
-    font-weight: 600;
-    min-width: 280px;
+.education{
+    padding: 100px 15px;
+    background: var(--secondary-bg-color);
 }
-
-.text-animation span {
+.education h2{
+    /* text-align: center; */
+    margin-bottom: 5rem;
+}
+.timeline-items{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
 }
-.animation-text span {
+.timeline-items::before{
+    content: "";
+    position: absolute;
+    left: calc(50% - 1px);
+    width: 2px;
+    height: 100%;
+    background-color: var(--main-color);
+}
+.timeline-item{
+    width: 100%;
+    margin-bottom: 40px;
     position: relative;
 }
-
-.text-animation span::before {
-    content: "HTML, CSS, JavaScript, Next.js, Node.js";
-    color: var(--main-color);
-    animation: words 20s infinite;
+.timeline-item:last-child{
+    margin-bottom: 0;
 }
-.animation-text span::before {
-    content: "C#, .NET, Python (Django), SQL, C++";
-    color: var(--main-color);
-    animation: words 20s infinite;
+.timeline-item:nth-child(odd){
+    padding-right: calc(50% + 30px);
+    text-align: right;
 }
-
-.text-animation span::after {
-    content: "";
-    background-color: var(--bg-color);
+.timeline-item:nth-child(even){
+    padding-left: calc(50% + 30px);
+} 
+.timeline-dot{
+    height: 21px;
+    width: 21px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
     position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    border-left: 3px solid var(--bg-color);
-    right: -8px;
-    top: 0; 
-    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top: 10px;
 }
-.animation-text span::after {
-    content: "";
+.timeline-date{
+  font-size: 20px;
+  font-weight: 800;
+  color: whitesmoke;
+  margin: 6px 0 15px;
+}
+.timeline-content{
     background-color: var(--bg-color);
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    border-left: 3px solid var(--bg-color);
-    right: -8px;
-    top: 0; 
-    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+    border: 3px solid var(--main-color);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--main-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
-@keyframes cursor {
-    to{
-        border-left: 2px solid var(--main-color);
-    }
+.timeline-content:hover{
+    transform:  scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
 }
-@keyframes Words{
-   0%,
-    20%{
-        content: "HTML";
-    }
-    21%,
-    40%{
-        content: "CSS";
-    }
-    41%,
-    60%{
-        content: "JavaScript";
-    }
-    61%,
-    80%{
-        content: "Next.js";
-    }
-    81%, 
-    100%{
-        content: "Node.js";
-    } 
+.timeline-content h3{
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    margin: 0 0 10px;
 }
-@keyframes typing{
-    10%,
-    15%,
-    30%,
-    35%,
-    50%,
-    55%,
-    70%,
-    75%,
-    90%,
-    95%{
-        width: 0;
-    }
-    5%,
-    20%,
-    25%,
-    40%,
-    45%,
-    65%,
-    80%,
-    85%{
-        with: calc(100% + 8px);
-    }
+.timeline-content p{
+    font-size: 16px;
+    font-weight: 300;
+    color: white;
+    line-height: 22px;
 }
-@keyframes serverWords{
-    0%,
-     20%{
-         content: "C#";
-     }
-     21%,
-     40%{
-         content: ".NET";
-     }
-     41%,
-     60%{
-         content: "Python (Django)";
-     }
-     61%,
-     80%{
-         content: "SQL";
-     }
-     81%, 
-     100%{
-         content: "C++";
-     } 
- }
-@keyframes serverTyping{
-    10%,
-    15%,
-    30%,
-    35%,
-    50%,
-    55%,
-    70%,
-    75%,
-    90%,
-    95%{
-        width: 0;
-    }
-    5%,
-    20%,
-    25%,
-    40%,
-    45%,
-    65%,
-    80%,
-    85%{
-        with: calc(100% + 8px);
-    }
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+} 
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+    width: 50px;
+}
+
+img{
+    max-width: 100%;
+}
+  /* Hide radio buttons */
+  input[type="radio"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+}
+  
+/* body{
+  
+    min-height: 100svh;
+    display: grid;
+    place-content: center;
+    margin: 0;
+    padding: 1rem;
+    font: 1rem system-ui;
 } */
+.cards{
+    --img-w: 200px;
+    --duration: 300ms;
+    --img-easing: cubic-bezier(0.34, 1.56, 0.64, 1);
+    width: min(100% - 4rem, 800px);
+    margin-inline: auto;
+    display: grid;
+    
+    counter-reset: my-counter;
+}
+  
+.card{
+    --cards-grid-cols: auto;
+    --cards-grid-rows: var(--img-w) auto;
+    --cards-grid-gap: 2rem;
+    --cards-footer-justify: center;
+    
+    grid-area: 1/1;
+    display: grid;
+   place-items: center; 
+    grid-template-columns: var(--cards-grid-cols);
+    grid-template-rows: var(--cards-grid-rows);
+    gap: var(--cards-grid-gap);
+    padding: 1rem;
+}
+  
+@media (600px < width){
+   .card{
+        --cards-grid-cols: var(--img-w) auto;
+        --cards-grid-rows: auto;
+        --cards-grid-gap: 4rem;
+        --cards-footer-justify: start;
+}
+}
+  
+  
+.card-img{
+   width: 200px;
+   height: 200px;
+   align-items: center;
+   margin-top: 140px;
+   aspect-ratio: 1/1;
+   rotate: var(--angle, 0deg);
+   border-radius: 10px;
+   border: 3px solid #FFF;
+   overflow: hidden;
+   transform-origin: center;
+   object-fit: cover;
+   box-shadow: 0 0 5px 3px rgba(0 0 0 / .05);
+}
+  
+  
+  
+input:nth-of-type(1):checked + .card ~ .card > .card-img{
+  animation: straighten-img-1 calc(var(--duration) * 2) forwards;
+  animation-timing-function: var(--img-easing);
+}
+.card:has(~input:nth-of-type(2):checked) > .card-img,
+input:nth-of-type(2):checked + .card ~ .card > .card-img{
+  animation: straighten-img-2 calc(var(--duration) * 2) forwards;
+  animation-timing-function: var(--img-easing);
+}
+  /* as CSS can't remove animations, we change the animation according to 
+  which checkbox is checked  - all animations are the same 
+  (would be simpler with SCSS) */
+@keyframes straighten-img-1 { 50%{ --angle: 0deg;} }
+@keyframes straighten-img-2 { 50%{ --angle: 0deg;} }
 
 
+/* stacking order - these are updated according to which card is selected */
+.card{
+    z-index: -1;
+}
+input:checked + .card{
+    z-index:5 !important;
+}  
+/* next card checked - place behind */
+.card:has(+input:checked){
+    z-index:4;
+}
+/* next card +1 checked - place behind */
+.card:has(+input + .card + input:checked){
+    z-index:3;
+}
+.card-data{
+    display: grid;
+    gap: 1rem;
+}
+.card-data > .card-num{
+    opacity: var(--data-opacity, 0);
+    font-size: .8rem;
+    color: #666;
+}
+.card-data > h2{
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+.card-data > p{
+    font-size: 2rem;
+    padding: 19px 15px;
+    background: var(--secondary-bg-color);
+    font-weight: 200;
+    line-height: 1.5;
+    margin: auto;
+}
+.card-data > h2,
+.card-data > p{
+  transition: var(--duration) ease-in-out;
+  transition-delay: var(--data-delay,0ms);
+  opacity: var(--data-opacity, 0);
+  translate: 0 var(--data-y, 20px);
+}
+.card-data > footer{
+  display: flex;
+  justify-content: var(--cards-footer-justify);
+  gap: 2rem;
+}
+.card-data > footer label{
+   margin-block-start: auto;
+   cursor: pointer;
+   pointer-events: var(--card-events, none);
+   opacity: var(--data-opacity, 0);
+   transition: color var(--duration) ease-in-out;
+   color: var(--label-clr-txt,#000);
+   background-color:var(--label-clr-bg,#EEE);
+   border-radius: 50%;
+   width: 32px;
+   height: 32px;
+   aspect-ratio: 1/1;
+   display: grid;
+   place-content: center;
+   transition: background-color 300ms ease-in-out,color  300ms ease-in-out;
+  }
+  
+  
+input:checked:focus-visible + .card > .card-data > footer label,
+.card-data > footer label:hover{
+    --label-clr-txt: #FFF;
+    --label-clr-bg: steelblue;
+}
+  
+input:checked + .card{
+    --data-opacity: 1;
+    --data-y: 0;
+    --data-delay: var(--duration);
+    --card-events: auto;
+    transition: z-index;
+    transition-delay: 300ms;
+    /*z-index: 1;*/
+}
+  
+input:checked +.card > .card-img{
+   animation: reveal-img calc(var(--duration) * 2) forwards;
+}
+  
+@keyframes reveal-img{
+    50%{
+      translate: -150% 0;
+      --angle: 0deg;
+    }
+}
+.testimonials{
+    background: var(--secondary-bg-color);
+}
+.testimonials-box{
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.testimonials .heading{
+    margin-bottom: 5rem;
+}
+.testimonials-box img{
+    width: 30rem;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3rem;
+}
+.testimonials-item{
+    min-height: 550px;
+    max-width: 450px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 3px solid rgba(238, 238, 238, 0.2);
+    border-radius: 2rem;
+    margin: 0 2rem;
+    padding: 30px 60px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+    color: white;
+    transition: 0.4s ease-in-out;
+}
+.testimonials-item:hover{
+    border: 3px solid var(--main-color);
+    transform: translateY(-10px)scale(1.03);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.testimonials-item h2{
+    font-size: 2.8rem;
+}
+.testimonials-item h4{
+    font-size: 1.8rem;
+} 
+.testimonials-item span{
+    font-size: 2rem;
+    color: var(--main-color);
+}
+.testimonials-item p{
+    font-size: 2.2rem;
+    font-weight: 300;
+}
+#star{
+    color: gold;
+    font-size: 2rem; 
+}
+.contact{
+    background-color: var(--bg-color);
+}
+.contact h2{
+    margin-bottom: 3rem;
+    color: white;
+}
+.contact form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 5rem auto;
+    text-align: center;
+}
+.contact form .input-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.contact form .input-box input,
+.contact form textarea{
+    width: 100%;
+    padding: 2.5rem;
+    border-radius: 2rem;
+    border: 2px solid var(--main-color);
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+    resize: none;
+}
+
+.contact form .btn{
+    margin-top: 2rem;
+
+}
+.footer{
+    background-color: var(--secondary-bg-color);
+    padding: 40px 0;
+    width: 100%;
+    bottom:0;
+    position: relative;
+}   
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: var(--main-color);
+}
+.footer .social a{
+    font-size: 25px;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%; 
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+}
+.footer .social a:hover{
+  transform: scale(1.2)translateY(-10px);
+  background-color: var(--main-color);
+  color: black;
+  box-shadow: 0 0 25px var(--main-color);  
+}
+.footer ul{
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+.footer ul li a{
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+.footer ul li a:hover{
+    border-bottom: 3px solid var(--main-color);
+}
+.footer ul li{
+    display: inline-block;
+    padding: 0 15px;
+}
+.footer .copyright{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+@media (max-width: 1285px) {
+   html{
+    font-size: 55%;
+   }
+   .projects .cards{
+    padding-bottom: 7rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 5rem;
+   }
+}
+@media (max-width: 991px) {
+    header{
+        padding: 2rem 3%;
+    }
+    section{
+        padding: 10rem 3% 2rem;
+    }
+    .timeline-items::before{
+        left: 7px;
+    }
+    .timeline-item:nth-child(odd){
+        padding-right: 0;
+        text-align: 37px;
+    }
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even){
+        padding-left: 37px;
+    }
+    .timeline-dot{
+        left: 0;
+    }   
+    .projects{
+        padding-bottom: 7rem;
+    }
+    .testimonials .wrapper{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .contact form{
+        flex-direction: column;
+    }
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+@media(max-width:895px){
+    #menu-icon{
+        display: block;
+    }
+    .navbar{
+        position:absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem 3%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(20px);
+        border-bottom-left-radius: 2rem;
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        display: none;
+    }
+    .navbar.active{
+        display: block;
+    }
+    .navbar a{
+        display: block;
+        margin: 3rem 0;
+        font-size: 2rem;
+        color: white;
+
+    }
+    .about{
+        flex-direction: column-reverse;
+        margin: 5rem 4rem;
+    }
+    .about-content h3{
+        font-size: 2.6rem;
+    }
+    .about-content h1{
+        font-size: 8rem;
+        margin-top: 3rem;
+    }
+    .about-content p{
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .about-img img{
+        width: 56vw;
+    }
+    .projects h2{
+        margin-bottom: 3rem;
+    }
+    .projects .cards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
