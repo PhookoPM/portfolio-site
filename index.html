@@ -11,7 +11,7 @@
 
 
   <header>
-      <a href="#About" class="logo"> Patrick 
+      <a href="#about" class="logo"> Patrick 
       <span>Phooko</span></a>
 
       <i class='bx bx-menu' id="menu-icon"></i>
@@ -29,9 +29,7 @@
     <div class="about-content">
       <h1> Transforming Concepts into <br>
         <span>Seamless User Experiences</span></h1>
-      <h3> Hi! I'm Phooko PM, a passionate Softwear Developer based <br>in Lesotho </h3> 
-      <!-- <h3 class="text-animation">Frontend Dev: <span></span></h3>
-      <h3 class="animation-text">Server-side Dev: <span></span></h3> -->
+      <h3> Hi! I'm Phooko PM, a passionate Software Developer based <br>in Lesotho </h3> 
       <h3 class="text-animation">Frontend Dev: <span id="frontend-text"></span></h3>
       <h3 class="text-animation">Server-side Dev: <span id="server-text"></span></h3>
 
@@ -50,11 +48,10 @@
           <img class="pointer-icon" src="data:image/png;base64,
           iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAABh0lEQVQ4T63USygFURzHcTciC1aUWBClWJBSbFhgQclGJCGUshAL5BXZXBbktSJJyQIbG8pKydajZOVVhMQKK+X1/
           dWZ25jcawxTn86cmXN+c+6c/1xf2D8evj9kpTL3DZdWhpewcCa3ogXHqPMalsDEMWSZgF3aNi9hxUwaRiw2UI41+H8TFsXgblThCQN4wApmsOA2LI2BE0jBoQlVUBEm0Y9NN2HVDOpCBOYwj3czsZa2B004CBWmd6L3UIg7s5oja4JpO2kbUIbbYGE53NBuxWMbQ3h2BKk7jhLk4vW7sHwuzkK1d45pXOAaH47AZfpxKLVftxdtpllJOq0K0zpeODmFNmLfXNSqr9AYLMy6HsmJAhWeAb2XaDyiBvfYwxZ6fwqz38+ms4QT8wD97D6sYhFTbsNUEqrwRFRApaLv8QZJGDGhgbxQH3ozozowClW7xqre8szsdtodNyvTk9fNz6untXYzxqxG9ytx5ibM2tlBBmsn7UcynQKoPL4cXv7PnBmB/
-          ieaoUgU6cknKQAAAABJRU5ErkJggg==" alt="Pointer Icon" /></a>
-        <!-- <a href="#Hire" class="btn">Hire</a> -->
+          ieaoUgU6cknKQAAAABJRU5ErkJggg==" alt="Pointer Icon"/></a>
         <a href="#contact" class="btn">Contact</a>
       </div>
-    </div>    
+    </div>     
 
       <div class="about-img">
            <img src="images/logo.png" alt="">
@@ -117,7 +114,7 @@
                     adipiscing elit, sed do eiusmod tempor 
                     incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud 
-                    eborder-radius: 10px;xercitation ullamco laboris nisi ut 
+                    exercitation ullamco laboris nisi ut 
                     aliquip ex ea commodo consequat. 
                   </p>
               </div> 
@@ -138,7 +135,7 @@
         </div>
       </div>  
   </section>
-  <section class="Projects" id="projects">
+  <section class="projects" id="projects">
     <h2 class="heading">Projects</h2>
 
     <div class="cards">
@@ -149,7 +146,9 @@
        <div class="card-data">
           <span class="card-num">1/2</span>
           <h2>Alejandro Escamilla</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. 
+            Provident rerum quae nemo eligendi fugiat!</p>
           <footer>
             <label for="radio-2" aria-label="Previous">&#10094;</label>
             <label for="radio-2" aria-label="Next">&#10095;</label>
@@ -164,7 +163,9 @@
         <div class="card-data">
           <span class="card-num">2/2</span>
           <h2>Shyamanta Baruah</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Natus maiores accusantium cumque atque? Ex voluptatem quisquam 
+            temporibus. Provident rerum quae nemo eligendi fugiat!</p>
           <footer>
             <label for="radio-1" aria-label="Previous">&#10094;</label>
             <label for="radio-1" aria-label="Next">&#10094;</label>
@@ -225,14 +226,14 @@
                     aliquip ex ea commodo consequat.
                   </p>
                   <h4>K. Kala</h4>
-                  <span>CEO of IT CENTER</span>
+                  <span>CEO - IT CENTER</span>
               </div>
             </div>
     </div> 
   </section>
 
   <section class="contact" id="contact">
-      <h2 class="heading">Contact <span>Me</span><h2>
+      <h2 class="heading">Contact <span>Me</span></h2>
 
       <form action="">
          <div class="input-group">
@@ -243,8 +244,9 @@
                 placeholder="Email">
             </div>
             <div class="input-box">
-                <input type="number"
-                placeholder="Phone Number">
+                <input type="tel" id="phone" name="phone" 
+                pattern="[+]{1}[0-9]{11,14}" 
+                placeholder="Phone Number" required>
                 <input type="text"
                 placeholder="Subject"> 
             </div>
@@ -253,36 +255,37 @@
           <div class="input-group-2">
               <textarea name="" id="" cols="30"
               rows="10" placeholder="Your Message"></textarea>
-              <input type="submit" value="Send 
-              Message" class="btn">
+              <input type="submit" value="Send Message" class="btn">
           </div>
       </form>
   </section>
 
   <footer class="footer">
+      <div class="social">
       <a href="https://github.com/phookopm" target="_blank"><i class='bx bxl-github'></i></a>
       <a href="https://www.linkedin.com/in/phooko-pm-4a0b1b1b8/" target="_blank"><i class='bx bxl-linkedin'></i></a>
       <a href="https://facebook.com/yourusername" target="_blank"><i class='bx bxl-facebook'></i></a>
       <a href="https://twitter.com/yourusername" target="_blank"><i class='bx bxl-twitter'></i></a>
+      </div>
     <ul class="list">
         <li>
           <a href="#">FAQ</a> 
         </li> 
         
         <li>
-          <a href="#">Projects</a> 
+          <a href="#projects">Projects</a> 
         </li> 
 
         <li>
-          <a href="#">About Me</a> 
+          <a href="#about">About Me</a> 
         </li>
 
         <li>
-          <a href="#">Contact</a> 
+          <a href="#contact">Contact</a> 
         </li>
         
         <li>
-          <a href="#">Testimonials</a> 
+          <a href="#testimonials">Testimonials</a> 
         </li> 
     </ul>
     <p class="copyright">

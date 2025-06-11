@@ -17,15 +17,15 @@
 }
 
 html{
-    font-size: 60%;
-    overflow: hidden;
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 body{
     background-color: var(--bg-color);
     color: var(--text-color);
-    /* font-size: 1.6rem;
-    overflow-y: scroll; */
 }
 
 header{
@@ -33,7 +33,6 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    /* height: 10vh; */
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     display: flex;
@@ -56,8 +55,6 @@ header{
     transform: scale(1.1);
 }
 .logo span{
-    /* color: var(--text-color); */
-    /* font-weight: 900; */
     text-shadow: 0 0 25px var(--text-color);
 }
 
@@ -68,17 +65,12 @@ header{
     font-weight: 500;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
-/*      
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5rem; */
+
 }
 .navbar a:hover,
 .navbar a.active{
     color: var(--main-color);
     border-bottom: 3px solid var(--main-color);
-    /* transform: scale(1.1); */
 }
 #menu-icon{
     font-size: 3.6rem;
@@ -109,11 +101,9 @@ section{
 
 span{
     color: var(--main-color);
-    /* text-shadow: 0 0 15px var(--text-color); */
 }
 .logo span{
     color: var(--main-color);
-    /* text-shadow: 0 0 15px var(--text-color); */
 }
 
 .about-content h3{
@@ -249,7 +239,6 @@ span{
     background: var(--secondary-bg-color);
 }
 .education h2{
-    /* text-align: center; */
     margin-bottom: 5rem;
 }
 .timeline-items{
@@ -340,7 +329,7 @@ img{
     max-width: 100%;
 }
   /* Hide radio buttons */
-  input[type="radio"] {
+input[type="radio"] {
       position: absolute;
       width: 1px;
       height: 1px;
@@ -351,24 +340,14 @@ img{
       white-space: nowrap;
       border-width: 0;
 }
-  
-/* body{
-  
-    min-height: 100svh;
-    display: grid;
-    place-content: center;
-    margin: 0;
-    padding: 1rem;
-    font: 1rem system-ui;
-} */
+/* Style the cards container */
 .cards{
-    --img-w: 200px;
+    --img-w: 400px;
     --duration: 300ms;
     --img-easing: cubic-bezier(0.34, 1.56, 0.64, 1);
-    width: min(100% - 4rem, 800px);
+    width: min(100% - 3rem, 1000px);
     margin-inline: auto;
     display: grid;
-    
     counter-reset: my-counter;
 }
   
@@ -378,9 +357,9 @@ img{
     --cards-grid-gap: 2rem;
     --cards-footer-justify: center;
     
-    grid-area: 1/1;
+    grid-area: 2/2;
     display: grid;
-   place-items: center; 
+    place-items: center; 
     grid-template-columns: var(--cards-grid-cols);
     grid-template-rows: var(--cards-grid-rows);
     gap: var(--cards-grid-gap);
@@ -391,20 +370,20 @@ img{
    .card{
         --cards-grid-cols: var(--img-w) auto;
         --cards-grid-rows: auto;
-        --cards-grid-gap: 4rem;
+        --cards-grid-gap: 15em;
         --cards-footer-justify: start;
 }
 }
   
   
 .card-img{
-   width: 200px;
-   height: 200px;
+   width: 400px;
+   height: 400px;
    align-items: center;
-   margin-top: 140px;
-   aspect-ratio: 1/1;
+   margin-top: 100px;
+   aspect-ratio: 2/2;
    rotate: var(--angle, 0deg);
-   border-radius: 10px;
+   border-radius: 20px;
    border: 3px solid #FFF;
    overflow: hidden;
    transform-origin: center;
@@ -546,7 +525,7 @@ input:checked +.card > .card-img{
     grid-template-columns: repeat(2,1fr);
     gap: 3rem;
 }
-.testimonials-item{
+.testimonial-item{
     min-height: 550px;
     max-width: 450px;
     background: rgba(0, 0, 0, 0.7);
@@ -564,22 +543,22 @@ input:checked +.card > .card-img{
     color: white;
     transition: 0.4s ease-in-out;
 }
-.testimonials-item:hover{
+.testimonial-item:hover{
     border: 3px solid var(--main-color);
     transform: translateY(-10px)scale(1.03);
     box-shadow: 0 0 25px var(--main-color);
 }
-.testimonials-item h2{
+.testimonial-item h2{
     font-size: 2.8rem;
 }
-.testimonials-item h4{
+.testimonial-item h4{
     font-size: 1.8rem;
 } 
-.testimonials-item span{
-    font-size: 2rem;
+.testimonial-item span{
+    font-size: 1.8rem;
     color: var(--main-color);
 }
-.testimonials-item p{
+.testimonial-item p{
     font-size: 2.2rem;
     font-weight: 300;
 }
@@ -650,7 +629,7 @@ input:checked +.card > .card-img{
     transition: 0.3s ease-in-out;
 }
 .footer .social a:hover{
-  transform: scale(1.2)translateY(-10px);
+  transform: scale(1.25)translateY(-8px);
   background-color: var(--main-color);
   color: black;
   box-shadow: 0 0 25px var(--main-color);  
@@ -724,6 +703,12 @@ input:checked +.card > .card-img{
     .footer {
         padding: 2rem 3%;
     }
+    .footer .social a {
+        font-size: 36px;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+      }
 }
 @media(max-width:895px){
     #menu-icon{
@@ -755,6 +740,7 @@ input:checked +.card > .card-img{
     .about{
         flex-direction: column-reverse;
         margin: 5rem 4rem;
+        gap: 5rem;
     }
     .about-content h3{
         font-size: 2.6rem;
@@ -768,7 +754,8 @@ input:checked +.card > .card-img{
         margin: 0 auto;
     }
     .about-img img{
-        width: 56vw;
+        width: 70vw;
+        height: 70vw;
     }
     .projects h2{
         margin-bottom: 3rem;
