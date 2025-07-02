@@ -598,10 +598,8 @@ input:checked +.card > .card-img{
     margin: 1.5rem 0;
     resize: none;
 }
-
 .contact form .btn{
     margin-top: 2rem;
-
 }
 .footer{
     background-color: var(--secondary-bg-color);

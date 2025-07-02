@@ -235,28 +235,42 @@
   <section class="contact" id="contact">
       <h2 class="heading">Contact <span>Me</span></h2>
 
-      <form action="">
-         <div class="input-group">
-           <div class="input-box">
-                <input type="text"
-                placeholder="Full name" required> 
-                <input type="email"
-                placeholder="Email">
-            </div>
-            <div class="input-box">
-                <input type="tel" id="phone" name="phone" 
-                pattern="[+]{1}[0-9]{11,14}" 
-                placeholder="Phone Number" required>
-                <input type="text"
-                placeholder="Subject"> 
-            </div>
-          </div>  
-          
-          <div class="input-group-2">
-              <textarea name="" id="" cols="30"
-              rows="10" placeholder="Your Message"></textarea>
-              <input type="submit" value="Send Message" class="btn">
+      <form action="https://formsubmit.co/makhotlaph@gmail.com" method="POST">
+  
+        <!-- 1. Verify your email with FormSubmit by submitting this form once. 
+             You'll receive a confirmation email. -->
+        
+        <!-- 2. Hidden honeypot input (to trap bots) -->
+        <input type="text" name="_honey" style="display:none">
+      
+        <!-- 3. Disable captcha if you don't want it (optional) -->
+        <input type="hidden" name="_captcha" value="true"> <!-- Set to false if you disable -->
+        
+        <!-- 4. Redirect to thank you page -->
+        <input type="hidden" name="_next" value="https://info@phookopm.com/thank-you.html">
+      
+        <!-- Form Fields -->
+        <div class="input-group">
+          <div class="input-box">
+            <input type="text" name="name" placeholder="First Names" required>
+            <input type="text" name="name" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email" required>
           </div>
+          <div class="input-box">
+            <input type="tel" name="phone" placeholder="Phone Number" required
+                   pattern="[+]{1}[0-9]{11,14}">
+            <input type="text" name="subject" placeholder="Subject" required>
+          </div>
+        </div>
+      
+        <div class="input-group-2">
+          <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+          
+          <!-- Google reCAPTCHA v2 widget -->
+          <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+      
+          <input type="submit" value="Send Message" class="btn">
+        </div>
       </form>
   </section>
 
