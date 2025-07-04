@@ -708,57 +708,88 @@ input:checked +.card > .card-img{
         line-height: 60px;
       }
 }
-@media(max-width:895px){
-    #menu-icon{
-        display: block;
+@media(max-width: 895px) {
+    #menu-icon {
+      display: block;
     }
-    .navbar{
-        position:absolute;
-        top: 100%;
-        right: 0;
-        width: 50%;
-        padding: 1rem 3%;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(20px);
-        border-bottom-left-radius: 2rem;
-        border-left: 2px solid var(--main-color);
-        border-bottom: 2px solid var(--main-color);
-        display: none;
+    .navbar {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 65%;
+      padding: 1rem 3%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom-left-radius: 2rem;
+      border-left: 2px solid var(--main-color);
+      border-bottom: 2px solid var(--main-color);
+      display: none;
+      z-index: 100;
     }
-    .navbar.active{
-        display: block;
+    .navbar.active {
+      display: block;
     }
-    .navbar a{
-        display: block;
-        margin: 3rem 0;
-        font-size: 2rem;
-        color: white;
-
+    .navbar a {
+      display: block;
+      margin: 2rem 0;
+      font-size: 1.9rem;
+      color: white;
     }
-    .about{
-        flex-direction: column-reverse;
-        margin: 5rem 4rem;
-        gap: 5rem;
+    .about {
+      flex-direction: column-reverse;
+      margin: 5rem 2rem;
+      gap: 4rem;
+      text-align: center;
     }
-    .about-content h3{
-        font-size: 2.6rem;
+    .about-content {
+      align-items: center;
     }
-    .about-content h1{
-        font-size: 8rem;
-        margin-top: 3rem;
+    .about-content h1 {
+      font-size: 4rem;
+      margin-top: 2rem;
+      line-height: 1.2;
     }
-    .about-content p{
-        max-width: 600px;
-        margin: 0 auto;
+    .about-content h3 {
+      font-size: 2rem;
     }
-    .about-img img{
-        width: 70vw;
-        height: 70vw;
+    .about-content p {
+      max-width: 90%;
+      font-size: 1.4rem;
+      margin: 0 auto;
+      line-height: 1.6;
+    }  
+    .about-img img {
+      width: 70vw;
+      height: 70vw;
+      margin: 0 auto;
     }
-    .projects h2{
-        margin-bottom: 3rem;
+    .social-icons {
+      justify-content: center;
+      flex-wrap: wrap;
     }
-    .projects .cards{
-        grid-template-columns: repeat(1, 1fr);
+    .social-icons a {
+      width: 4rem;
+      height: 4rem;
+      font-size: 2rem;
+      margin: 1rem 1rem;
     }
-}
+    .btn-group {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .btn {
+      font-size: 1.4rem;
+      padding: 1rem 2.5rem;
+    }
+    .projects h2 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .projects .cards {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 0 2rem;
+    }
+  }
+  
