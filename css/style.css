@@ -283,13 +283,20 @@ span{
     border-radius: 50%;
     top: 10px;
 }
-.timeline-date{
+.timeline-date:nth-child(odd){
   font-size: 20px;
   font-weight: 800;
   color: whitesmoke;
   margin: 6px 0 15px;
   text-align: right;
 }
+.timeline-date:nth-child(even){
+    font-size: 20px;
+    font-weight: 800;
+    color: whitesmoke;
+    margin: 6px 0 15px;
+    text-align: left;
+  }
 .timeline-content{
     background-color: var(--bg-color);
     border: 3px solid var(--main-color);
