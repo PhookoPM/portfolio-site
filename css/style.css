@@ -129,7 +129,7 @@ span{
 .about-img img{
     position: relative;
     top: 3rem;
-    width: 32vw;
+    width: 42vw;
     height: 32vw;
     object-fit: cover;
     border-radius: 50%;
@@ -308,7 +308,7 @@ span{
     margin: 0 0 10px;
 }
 .timeline-content p{
-    font-size: 16px;
+    font-size: 2.1rem;
     font-weight: 300;
     color: white;
     line-height: 22px;
@@ -515,7 +515,7 @@ input:checked +.card > .card-img{
     margin-bottom: 5rem;
 }
 .testimonials-box img{
-    width: 30rem;
+    width: 40rem;
     border-radius: 50%;
     border: 3px solid var(--main-color);
     box-shadow: 0 0 25px var(--main-color);
@@ -559,7 +559,7 @@ input:checked +.card > .card-img{
     color: var(--main-color);
 }
 .testimonial-item p{
-    font-size: 2.2rem;
+    font-size: 16px;
     font-weight: 300;
 }
 #star{
