@@ -264,13 +264,14 @@ span{
 .timeline-item:last-child{
     margin-bottom: 0;
 }
-.timeline-item:nth-child(odd){
+.timeline-item:nth-child(odd) .timeline-date{
     padding-right: calc(50% + 30px);
-    text-align: left;
+    text-align: right;
 }
 
-.timeline-item:nth-child(even){
+.timeline-item:nth-child(even) .timeline-date{
     padding-left: calc(50% + 30px);
+    text-align: left;
 } 
 .timeline-dot{
     height: 21px;
@@ -292,27 +293,44 @@ span{
 .timeline-content{
     background-color: var(--bg-color);
     border: 3px solid var(--main-color);
-    padding: 30px 50px;
+    padding: 3rem 4rem;
     border-radius: 4rem;
     box-shadow: 0 0 10px var(--main-color);
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
 }
 .timeline-content:hover{
     transform:  scale(1.05);
     box-shadow: 0 0 25px var(--main-color);
 }
+.timeline-content h3,
+.timeline-content h4,
+.timeline-content p {
+    text-align: left;
+    color: white;
+}
 .timeline-content h3{
-    font-size: 20px;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+}
+.timeline-content h4 {
+    font-size: 2rem;
     font-weight: 500;
     color: white;
-    margin: 0 0 10px;
+    margin-bottom: 1.5rem;
 }
 .timeline-content p{
-    font-size: 2.5rem;
-    font-weight: 300;
+    font-size: 1.8rem;
+    font-weight: 400;
     color: white;
-    line-height: 22px;
+    line-height: 2.8rem;
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
 }
 
 ::-webkit-scrollbar {
@@ -793,4 +811,43 @@ input:checked +.card > .card-img{
       padding: 0 2rem;
     }
   }
+  @media (max-width: 768px) {
+    .timeline {
+      flex-direction: column;
+      gap: 4rem;
+      padding: 2rem 1rem;
+    }
+  
+    .timeline-item {
+      flex-direction: column !important;
+      align-items: flex-start;
+    }
+  
+    .timeline-date {
+      text-align: left !important;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  
+    .timeline-content {
+      width: 100%;
+      padding: 2.5rem;
+      font-size: 1.6rem;
+      border-radius: 2rem;
+    }
+  
+    .timeline-content h3 {
+      font-size: 2rem;
+    }
+  
+    .timeline-content h4 {
+      font-size: 1.8rem;
+    }
+  
+    .timeline-content p {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+  }
+  
   
