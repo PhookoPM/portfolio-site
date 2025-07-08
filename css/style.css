@@ -299,6 +299,7 @@ span{
     cursor: pointer;
     transition: 0.3s ease-in-out;
     height: auto;
+    text-align: left;
     overflow: visible;
 }
 .timeline-content:hover{
@@ -308,6 +309,7 @@ span{
 .timeline-content h3{
     font-size: 20px;
     font-weight: 500;
+    text-align: left;
     color: white;
     margin: 0 0 10px;
 }
@@ -316,7 +318,17 @@ span{
     font-weight: 300;
     color: white;
     line-height: 1.6;
+    text-align: left;
     word-wrap: break-word;
+}
+.timeline-content p a {
+    color: rgb(15, 135, 31);
+    text-decoration: underline; 
+    transition: color 0.3s ease;
+}
+  
+.timeline-content p a:hover {
+    color: #0e8030; 
 }
 
 ::-webkit-scrollbar {
@@ -682,6 +694,9 @@ input:checked +.card > .card-img{
     }
     .timeline-items::before{
         left: 7px;
+    }
+    .timeline-content{
+        text-align: left;
     }
     .timeline-item:nth-child(odd){
         padding-right: 0;
