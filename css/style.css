@@ -260,13 +260,14 @@ span{
     width: 100%;
     margin-bottom: 40px;
     position: relative;
+    overflow: visible;
 }
 .timeline-item:last-child{
     margin-bottom: 0;
 }
 .timeline-item:nth-child(odd){
     padding-right: calc(50% + 30px);
-    text-align: left;
+    text-align: right;
 }
 
 .timeline-item:nth-child(even){
@@ -297,6 +298,8 @@ span{
     box-shadow: 0 0 10px var(--main-color);
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    height: auto;
+    overflow: visible;
 }
 .timeline-content:hover{
     transform:  scale(1.05);
@@ -312,7 +315,8 @@ span{
     font-size: 2.5rem;
     font-weight: 300;
     color: white;
-    line-height: 22px;
+    line-height: 1.6;
+    word-wrap: break-word;
 }
 
 ::-webkit-scrollbar {
