@@ -144,6 +144,7 @@
   <section class="timeline-section" id="education">
     <div class="timeline-header">
         <h2 class="timeline-title">Education & Experience</h2>
+        <button class="resume-button" onclick="openModal()">View Resume</button>
         <p class="timeline-subtitle">My academic journey and professional growth</p>
     </div>
 
@@ -228,7 +229,7 @@
                     <ul class="responsibilities-list">
                         <li>Technical Support and Consultancy: Remote support for hardware/software issues</li>
                         <li>Network Installation and Testing: Setup and testing of network infrastructure</li>
-                        <li>System Maintenance and Upgrades: POS systems installation and user training</li>
+                        <li>System Maintenance and Upgrades: POS systems Development, Installation and user training</li>
                     </ul>
                     <h5 class="skills-title">Skills & Technologies:</h5>
                     <div class="skills-container">
@@ -253,24 +254,24 @@
                     <h5 class="responsibilities-title">Key Responsibilities:</h5>
                     <ul class="responsibilities-list">
                         <li>Practical and Theoretical Training: Computer networking and cybersecurity fundamentals</li>
-                        <li>Hands-on Training: Network topology configuration and security tools</li>
+                        <li>Web Developmet: Develop and modify customer websites for better user experience.</li>
                         <li>IT Support and Consultancy: Technical support across multiple communication channels</li>
                     </ul>
                     <h5 class="skills-title">Skills & Technologies:</h5>
                     <div class="skills-container">
+                        <span class="skill-tag">Web Development</span>
                         <span class="skill-tag">Computer Networks</span>
                         <span class="skill-tag">Cybersecurity</span>
-                        <span class="skill-tag">TCP/IP</span>
                         <span class="skill-tag">Kali Linux</span>
                         <span class="skill-tag">Metasploit</span>
                         <span class="skill-tag">Wireshark</span>
-                        <span class="skill-tag">Training</span>
+                        <span class="skill-tag">Enduser Training</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+<!-- </section>
   <section class="projects" id="projects">
     <h2 class="heading">Projects</h2>
 
@@ -291,8 +292,9 @@
           </footer>
         </div>
       </article>
-    
-      <!-- card 2 -->
+    -->
+       <!-- card 2  -->
+    <!--   
       <input type="radio" id="radio-2" name="radio-card">
       <article class="card" style="--angle:-8deg">
         <img class="card-img" src="https://picsum.photos/id/30/200/300">
@@ -310,7 +312,101 @@
       </article>  
     </div>    
 
+  </section> -->
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+      <div class="projects-header">
+          <h2 class="projects-title">Projects</h2>
+          <div class="projects-tabs">
+              <button class="tab-button active">My Projects</button>
+          </div>
+      </div>
+
+      <div class="projects-grid">
+          <div class="project-card">
+              <div class="project-image">🌐</div>
+              <div class="project-content">
+                  <h3 class="project-title">Network Security Dashboard</h3>
+                  <p class="project-category">Cybersecurity • Web Application</p>
+                  <p class="project-description">
+                      A comprehensive network monitoring and security analysis dashboard built with modern web technologies. 
+                      Features real-time threat detection, network topology visualization, and automated security reporting.
+                  </p>
+                  <div class="project-technologies">
+                      <span class="tech-tag">React</span>
+                      <span class="tech-tag">Node.js</span>
+                      <span class="tech-tag">Python</span>
+                      <span class="tech-tag">Wireshark API</span>
+                      <span class="tech-tag">MongoDB</span>
+                  </div>
+                  <div class="project-links">
+                      <a href="#" class="project-link primary">Live Demo</a>
+                      <a href="#" class="project-link secondary">View Code</a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="project-card">
+              <div class="project-image">🔒</div>
+              <div class="project-content">
+                  <h3 class="project-title">Penetration Testing Toolkit</h3>
+                  <p class="project-category">Cybersecurity • CLI Tool</p>
+                  <p class="project-description">
+                      A comprehensive penetration testing suite with automated vulnerability scanning, 
+                      custom exploit modules, and detailed reporting capabilities for network security assessments.
+                  </p>
+                  <div class="project-technologies">
+                      <span class="tech-tag">Python</span>
+                      <span class="tech-tag">Kali Linux</span>
+                      <span class="tech-tag">Metasploit</span>
+                      <span class="tech-tag">Nmap</span>
+                      <span class="tech-tag">Shell Scripting</span>
+                  </div>
+                  <div class="project-links">
+                      <a href="#" class="project-link primary">Documentation</a>
+                      <a href="#" class="project-link secondary">GitHub</a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="project-card">
+              <div class="project-image">📊</div>
+              <div class="project-content">
+                  <h3 class="project-title">Student Performance Analytics</h3>
+                  <p class="project-category">Data Science • Education</p>
+                  <p class="project-description">
+                      Machine learning-powered analytics platform for tracking and predicting student performance. 
+                      Includes interactive visualizations and automated early warning systems for academic intervention.
+                  </p>
+                  <div class="project-technologies">
+                      <span class="tech-tag">Python</span>
+                      <span class="tech-tag">Pandas</span>
+                      <span class="tech-tag">Scikit-learn</span>
+                      <span class="tech-tag">Flask</span>
+                      <span class="tech-tag">Chart.js</span>
+                  </div>
+                  <div class="project-links">
+                      <a href="#" class="project-link primary">View Project</a>
+                      <a href="#" class="project-link secondary">Source Code</a>
+                  </div>
+              </div>
+          </div>
+      </div>
   </section>
+
+  <!-- PDF Modal -->
+  <div id="pdfModal" class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h3 class="modal-title">Resume Preview</h3>
+              <button class="close-button" onclick="closeModal()">✕ Close</button>
+          </div>
+          <div class="modal-body">
+              <iframe id="pdfViewer" class="pdf-viewer" src="" title="Resume PDF"></iframe>
+          </div>
+      </div>
+  </div>
 
   <section class="testimonials" id="testimonials">
     <div class="testimonials-box">
@@ -417,9 +513,6 @@
       <a href="https://twitter.com/yourusername" target="_blank"><i class='bx bxl-twitter'></i></a>
       </div>
     <ul class="list">
-        <!-- <li>
-          <a href="#">FAQ</a> 
-        </li>  -->
         
         <li>
           <a href="#projects">Projects</a> 

@@ -140,6 +140,11 @@ span{
     cursor: pointer;
     transition: 0.4s ease-in-out; 
 }
+
+img{
+    max-width: 130%;
+}
+
 .about-img img:hover{ 
     box-shadow: 0 0 25px var(--main-color), 
                 0 0 50px var(--main-color), 
@@ -185,8 +190,8 @@ span{
     transition: 0.3s ease-in-out;
     cursor: pointer;
     text-decoration: none;
-    /* color: inherit;  */
 }
+
 .btn:hover{
     transform: scale(1.05);
     box-shadow: 0 0 50px var(--main-color);
@@ -255,9 +260,119 @@ span{
     margin-bottom: 16px;
 }
 
+.resume-button {
+    display: inline-block;
+    padding: 12px 32px;
+    background: var(--main-color);
+    color: hsl(220, 26%, 6%);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 24px;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+}
+
+.resume-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.4);
+}
+
 .timeline-subtitle {
     font-size: 1.125rem;
     color: var(--muted-color);
+}
+
+        /* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 1000px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.3s ease;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: between;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    flex: 1;
+}
+
+.close-button {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+}
+
+.close-button:hover {
+    background: var(--border-color);
+}
+
+.modal-body {
+    flex: 1;
+    padding: 20px;
+}
+
+.pdf-viewer {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { 
+         opacity: 0;
+         transform: scale(0.9) translateY(-50px);
+        }
+    to { 
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        }
 }
 
 .timeline-container {
@@ -322,7 +437,7 @@ span{
     transition: all 0.3s ease;
     position: relative;
     line-height: 1.6;
-
+    
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
@@ -445,102 +560,6 @@ span{
     }
 }
 
-
-/* .education{
-    padding: 100px 15px;
-    background: var(--secondary-bg-color);
-}
-.education h2{
-    margin-bottom: 5rem;
-}
-.timeline-items{
-    max-width: 1500px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-}
-.timeline-items::before{
-    content: "";
-    position: absolute;
-    left: calc(50% - 1px);
-    width: 2px;
-    height: 100%;
-    background-color: var(--main-color);
-}
-.timeline-item{
-    width: 100%;
-    margin-bottom: 40px;
-    position: relative;
-    overflow: visible;
-}
-.timeline-item:last-child{
-    margin-bottom: 0;
-}
-.timeline-item:nth-child(odd){
-    padding-right: calc(50% + 30px);
-}
-.timeline-item:nth-child(even){
-    padding-left: calc(50% + 30px);
-} 
-.timeline-dot{
-    height: 21px;
-    width: 21px;
-    background-color: var(--main-color);
-    box-shadow: 0 0 25px var(--main-color),
-                0 0 50px var(--main-color);
-    position: absolute;
-    left: calc(50% - 8px);
-    border-radius: 50%;
-    top: 10px;
-}
-.timeline-date{
-  font-size: 20px;
-  font-weight: 800;
-  color: whitesmoke;
-  margin: 6px 0 15px;
-}
-.timeline-content{
-    background-color: var(--bg-color);
-    border: 3px solid var(--main-color);
-    padding: 30px 50px;
-    border-radius: 4rem;
-    box-shadow: 0 0 10px var(--main-color);
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    height: auto;
-    text-align: left;
-    overflow: visible;
-}
-.timeline-content:hover{
-    transform:  scale(1.05);
-    box-shadow: 0 0 25px var(--main-color);
-}
-.timeline-content h3{
-    font-size: 20px;
-    font-weight: 500;
-    text-align: left;
-    color: white;
-    margin: 0 0 10px;
-}
-.timeline-content p{
-    font-size: 22px;
-    font-weight: 300;
-    color: white;
-    line-height: 1.6;
-    text-align: left;
-    word-wrap: break-word;
-}
-.timeline-content p span {
-    color: rgb(236, 179, 22);
-    text-decoration: underline; 
-    transition: color 0.3s ease;
-}
-  
-.timeline-content p span:hover {
-    color: rgb(236, 179, 22); 
-} */
-
 ::-webkit-scrollbar {
     width: 15px;
 }
@@ -552,182 +571,159 @@ span{
     width: 50px;
 }
 
-img{
-    max-width: 100%;
+/* Projects Section */
+.projects-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid var(--border-color);
 }
-  
-input[type="radio"] {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
-}
-/* Style the cards container */
-.cards{
-    --img-w: 400px;
-    --duration: 300ms;
-    --img-easing: cubic-bezier(0.34, 1.56, 0.64, 1);
-    width: min(100% - 3rem, 1000px);
-    margin-inline: auto;
-    display: grid;
-    counter-reset: my-counter;
-}
-  
-.card{
-    --cards-grid-cols: auto;
-    --cards-grid-rows: var(--img-w) auto;
-    --cards-grid-gap: 2rem;
-    --cards-footer-justify: center;
-    
-    grid-area: 2/2;
-    display: grid;
-    place-items: center; 
-    grid-template-columns: var(--cards-grid-cols);
-    grid-template-rows: var(--cards-grid-rows);
-    gap: var(--cards-grid-gap);
-    padding: 1rem;
-}
-  
-@media (600px < width){
-   .card{
-        --cards-grid-cols: var(--img-w) auto;
-        --cards-grid-rows: auto;
-        --cards-grid-gap: 15em;
-        --cards-footer-justify: start;
-}
-}
-  
-  
-.card-img{
-   width: 400px;
-   height: 400px;
-   align-items: center;
-   margin-top: 100px;
-   aspect-ratio: 2/2;
-   rotate: var(--angle, 0deg);
-   border-radius: 20px;
-   border: 3px solid #FFF;
-   overflow: hidden;
-   transform-origin: center;
-   object-fit: cover;
-   box-shadow: 0 0 5px 3px rgba(0 0 0 / .05);
-}
-  
-  
-  
-input:nth-of-type(1):checked + .card ~ .card > .card-img{
-  animation: straighten-img-1 calc(var(--duration) * 2) forwards;
-  animation-timing-function: var(--img-easing);
-}
-.card:has(~input:nth-of-type(2):checked) > .card-img,
-input:nth-of-type(2):checked + .card ~ .card > .card-img{
-  animation: straighten-img-2 calc(var(--duration) * 2) forwards;
-  animation-timing-function: var(--img-easing);
-}
-  /* as CSS can't remove animations, we change the animation according to 
-  which checkbox is checked  - all animations are the same 
-  (would be simpler with SCSS) */
-@keyframes straighten-img-1 { 50%{ --angle: 0deg;} }
-@keyframes straighten-img-2 { 50%{ --angle: 0deg;} }
 
+.projects-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
 
-/* stacking order - these are updated according to which card is selected */
-.card{
-    z-index: -1;
-}
-input:checked + .card{
-    z-index:5 !important;
-}  
-/* next card checked - place behind */
-.card:has(+input:checked){
-    z-index:4;
-}
-/* next card +1 checked - place behind */
-.card:has(+input + .card + input:checked){
-    z-index:3;
-}
-.card-data{
-    display: grid;
-    gap: 1rem;
-}
-.card-data > .card-num{
-    opacity: var(--data-opacity, 0);
-    font-size: .8rem;
-    color: #666;
-}
-.card-data > h2{
-    font-weight: 600;
+.projects-title {
     font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 16px;
 }
-.card-data > p{
-    font-size: 2rem;
-    padding: 19px 15px;
-    background: var(--secondary-bg-color);
-    font-weight: 200;
-    line-height: 1.5;
-    margin: auto;
+
+.projects-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
 }
-.card-data > h2,
-.card-data > p{
-  transition: var(--duration) ease-in-out;
-  transition-delay: var(--data-delay,0ms);
-  opacity: var(--data-opacity, 0);
-  translate: 0 var(--data-y, 20px);
+
+.tab-button {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--main-color);
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
-.card-data > footer{
-  display: flex;
-  justify-content: var(--cards-footer-justify);
-  gap: 2rem;
+
+.tab-button.active {
+    background: var(--main-color);
+    color: hsl(220, 26%, 6%);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
 }
-.card-data > footer label{
-   margin-block-start: auto;
-   cursor: pointer;
-   pointer-events: var(--card-events, none);
-   opacity: var(--data-opacity, 0);
-   transition: color var(--duration) ease-in-out;
-   color: var(--label-clr-txt,#000);
-   background-color:var(--label-clr-bg,#EEE);
-   border-radius: 50%;
-   width: 32px;
-   height: 32px;
-   aspect-ratio: 1/1;
-   display: grid;
-   place-content: center;
-   transition: background-color 300ms ease-in-out,color  300ms ease-in-out;
-  }
-  
-  
-input:checked:focus-visible + .card > .card-data > footer label,
-.card-data > footer label:hover{
-    --label-clr-txt: #FFF;
-    --label-clr-bg: steelblue;
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+    margin-top: 40px;
 }
-  
-input:checked + .card{
-    --data-opacity: 1;
-    --data-y: 0;
-    --data-delay: var(--duration);
-    --card-events: auto;
-    transition: z-index;
-    transition-delay: 300ms;
-    /*z-index: 1;*/
+
+.project-card {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
 }
-  
-input:checked +.card > .card-img{
-   animation: reveal-img calc(var(--duration) * 2) forwards;
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
 }
-  
-@keyframes reveal-img{
-    50%{
-      translate: -150% 0;
-      --angle: 0deg;
-    }
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--main-color), var(--border-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: hsl(220, 26%, 6%);
+    font-weight: bold;
 }
+
+.project-content {
+    padding: 24px;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--main-color);
+    margin-bottom: 8px;
+}
+
+.project-category {
+    font-size: 0.875rem;
+    color: var(--muted-color);
+    margin-bottom: 16px;
+}
+
+.project-description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-tag {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--main-color);
+}
+
+.project-links {
+    display: flex;
+    gap: 12px;
+}
+
+.project-link {
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.project-link.main {
+    background: var(--main-color);
+    color: hsl(220, 26%, 6%);
+    border-color: var(--main-color);
+}
+
+.project-link.secondary {
+    background: transparent;
+    color: var(--text-color);
+}
+
+.project-link:hover {
+    transform: scale(1.05);
+}
+
+.project-link.main:hover {
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+}
+
+.project-link.secondary:hover {
+    background: var(--border-color);
+}
+
+/* Testimonials Section */
+
 .testimonials{
     background: var(--secondary-bg-color);
 }
@@ -885,16 +881,12 @@ input:checked +.card > .card-img{
     font-size: 16px;
     color: white;
 }
-@media (max-width: 1285px) {
+ @media (max-width: 1285px) {
    html{
     font-size: 55%;
    }
-   .projects .cards{
-    padding-bottom: 7rem;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 5rem;
-   }
-}
+   
+} 
 @media (max-width: 991px) {
     header{
         padding: 2rem 3%;
@@ -902,12 +894,7 @@ input:checked +.card > .card-img{
     section{
         padding: 10rem 3% 2rem;
     }
-    .timeline-items::before{
-        left: 7px;
-    }
-    .timeline-content{
-        text-align: left;
-    }
+
     .timeline-item:nth-child(odd){
         padding-right: 0;
         text-align: 37px;
@@ -916,12 +903,38 @@ input:checked +.card > .card-img{
     .timeline-item:nth-child(even){
         padding-left: 37px;
     }
-    .timeline-dot{
-        left: 0;
-    }   
-    .projects{
-        padding-bottom: 7rem;
+     
+    .modal-content {
+        height: 95vh;
+        margin: 10px;
     }
+
+    .resume-button {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+
+    .projects-title {
+        font-size: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .project-card {
+        margin: 0 10px;
+    }
+
+    .project-links {
+        flex-direction: column;
+    }
+
+    .project-link {
+        text-align: center;
+    }
+    
     .testimonials .wrapper{
         grid-template-columns: repeat(1, 1fr);
     }
@@ -1010,16 +1023,277 @@ input:checked +.card > .card-img{
     .btn {
       font-size: 1.4rem;
       padding: 1rem 2.5rem;
-    }
-    .projects h2 {
-      font-size: 3rem;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    .projects .cards {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      padding: 0 2rem;
-    }
+    }  
   }
   
+
+
+
+
+ /* 
+input[type="radio"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+}
+    /* Style the cards container 
+.cards{
+    --img-w: 400px;
+    --duration: 300ms;
+    --img-easing: cubic-bezier(0.34, 1.56, 0.64, 1);
+    width: min(100% - 3rem, 1000px);
+    margin-inline: auto;
+    display: grid;
+    counter-reset: my-counter;
+}
+  
+.card{
+    --cards-grid-cols: auto;
+    --cards-grid-rows: var(--img-w) auto;
+    --cards-grid-gap: 2rem;
+    --cards-footer-justify: center;
+    
+    grid-area: 2/2;
+    display: grid;
+    place-items: center; 
+    grid-template-columns: var(--cards-grid-cols);
+    grid-template-rows: var(--cards-grid-rows);
+    gap: var(--cards-grid-gap);
+    padding: 1rem;
+}
+  
+@media (600px < width){
+   .card{
+        --cards-grid-cols: var(--img-w) auto;
+        --cards-grid-rows: auto;
+        --cards-grid-gap: 15em;
+        --cards-footer-justify: start;
+}
+    
+.card-img{
+   width: 400px;
+   height: 400px;
+   align-items: center;
+   margin-top: 100px;
+   aspect-ratio: 2/2;
+   rotate: var(--angle, 0deg);
+   border-radius: 20px;
+   border: 3px solid #FFF;
+   overflow: hidden;
+   transform-origin: center;
+   object-fit: cover;
+   box-shadow: 0 0 5px 3px rgba(0 0 0 / .05);
+}
+   
+input:nth-of-type(1):checked + .card ~ .card > .card-img{
+  animation: straighten-img-1 calc(var(--duration) * 2) forwards;
+  animation-timing-function: var(--img-easing);
+}
+.card:has(~input:nth-of-type(2):checked) > .card-img,
+input:nth-of-type(2):checked + .card ~ .card > .card-img{
+  animation: straighten-img-2 calc(var(--duration) * 2) forwards;
+  animation-timing-function: var(--img-easing);
+}
+  /* as CSS can't remove animations, we change the animation according to 
+  which checkbox is checked  - all animations are the same 
+  (would be simpler with SCSS) 
+@keyframes straighten-img-1 { 50%{ --angle: 0deg;} }
+@keyframes straighten-img-2 { 50%{ --angle: 0deg;} }
+
+
+/* stacking order - these are updated according to which card is selected 
+.card{
+    z-index: -1;
+}
+input:checked + .card{
+    z-index:5 !important;
+}  
+/* next card checked - place behind 
+.card:has(+input:checked){
+    z-index:4;
+}
+/* next card +1 checked - place behind 
+.card:has(+input + .card + input:checked){
+    z-index:3;
+}
+.card-data{
+    display: grid;
+    gap: 1rem;
+}
+.card-data > .card-num{
+    opacity: var(--data-opacity, 0);
+    font-size: .8rem;
+    color: #666;
+}
+.card-data > h2{
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+.card-data > p{
+    font-size: 2rem;
+    padding: 19px 15px;
+    background: var(--secondary-bg-color);
+    font-weight: 200;
+    line-height: 1.5;
+    margin: auto;
+}
+.card-data > h2,
+.card-data > p{
+  transition: var(--duration) ease-in-out;
+  transition-delay: var(--data-delay,0ms);
+  opacity: var(--data-opacity, 0);
+  translate: 0 var(--data-y, 20px);
+}
+.card-data > footer{
+  display: flex;
+  justify-content: var(--cards-footer-justify);
+  gap: 2rem;
+}
+.card-data > footer label{
+   margin-block-start: auto;
+   cursor: pointer;
+   pointer-events: var(--card-events, none);
+   opacity: var(--data-opacity, 0);
+   transition: color var(--duration) ease-in-out;
+   color: var(--label-clr-txt,#000);
+   background-color:var(--label-clr-bg,#EEE);
+   border-radius: 50%;
+   width: 32px;
+   height: 32px;
+   aspect-ratio: 1/1;
+   display: grid;
+   place-content: center;
+   transition: background-color 300ms ease-in-out,color  300ms ease-in-out;
+  }
+  
+  
+input:checked:focus-visible + .card > .card-data > footer label,
+.card-data > footer label:hover{
+    --label-clr-txt: #FFF;
+    --label-clr-bg: steelblue;
+}
+  
+input:checked + .card{
+    --data-opacity: 1;
+    --data-y: 0;
+    --data-delay: var(--duration);
+    --card-events: auto;
+    transition: z-index;
+    transition-delay: 300ms;
+    /*z-index: 1;
+}
+  
+input:checked +.card > .card-img{
+   animation: reveal-img calc(var(--duration) * 2) forwards;
+}
+  
+@keyframes reveal-img{
+    50%{
+      translate: -150% 0;
+      --angle: 0deg;
+    }
+} */
+
+
+
+/* .education{
+    padding: 100px 15px;
+    background: var(--secondary-bg-color);
+}
+.education h2{
+    margin-bottom: 5rem;
+}
+.timeline-items{
+    max-width: 1500px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.timeline-items::before{
+    content: "";
+    position: absolute;
+    left: calc(50% - 1px);
+    width: 2px;
+    height: 100%;
+    background-color: var(--main-color);
+}
+.timeline-item{
+    width: 100%;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: visible;
+}
+.timeline-item:last-child{
+    margin-bottom: 0;
+}
+.timeline-item:nth-child(odd){
+    padding-right: calc(50% + 30px);
+}
+.timeline-item:nth-child(even){
+    padding-left: calc(50% + 30px);
+} 
+.timeline-dot{
+    height: 21px;
+    width: 21px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top: 10px;
+}
+.timeline-date{
+  font-size: 20px;
+  font-weight: 800;
+  color: whitesmoke;
+  margin: 6px 0 15px;
+}
+.timeline-content{
+    background-color: var(--bg-color);
+    border: 3px solid var(--main-color);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--main-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    height: auto;
+    text-align: left;
+    overflow: visible;
+}
+.timeline-content:hover{
+    transform:  scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.timeline-content h3{
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    color: white;
+    margin: 0 0 10px;
+}
+.timeline-content p{
+    font-size: 22px;
+    font-weight: 300;
+    color: white;
+    line-height: 1.6;
+    text-align: left;
+    word-wrap: break-word;
+}
+.timeline-content p span {
+    color: rgb(236, 179, 22);
+    text-decoration: underline; 
+    transition: color 0.3s ease;
+}
+  
+.timeline-content p span:hover {
+    color: rgb(236, 179, 22); 
+} */
+
