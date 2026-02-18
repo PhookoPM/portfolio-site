@@ -1,5 +1,5 @@
-const frontendTools = ["HTML", "CSS", "Next.js", "Tailwind CSS"];
-const serverTools = ["C#", ".NET", "Python (Django)", "SQL"];
+const frontendTools = ["HTML", "CSS", "React(Next.js)", "Tailwind CSS", "Typescript", "Javascript","Vue.js" ];
+const serverTools = ["C#", ".NET", "Python (Django)", "Docker + PostgreSQL + Express", "Node.js"];
 
 const typeWriter = (elementId, words, delay = 150, wait = 2000) => {
     let i = 0;
