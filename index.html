@@ -141,7 +141,7 @@
       </div>  
   </section> -->
 
-  <section class="timeline-section" id="education">
+  <section class="timeline-section" id="education">  
     <div class="timeline-header">
         <h2 class="timeline-title">Education & Experience</h2>
         <button class="resume-button" onclick="openModal()">View Resume</button>
@@ -273,6 +273,7 @@
 <!-- </section>
   <section class="projects" id="projects">
     <h2 class="heading">Projects</h2>
+    
 
     <div class="cards">
 
@@ -323,6 +324,9 @@
       </div>
 
       <div class="projects-grid">
+        <div class="projects-carousel">
+          <button class="carousel-btn left">&#10094;</button>
+        <div class="projects-track">
           <div class="project-card">
             <a href="https://github.com/PhookoPM/Intrusion-Detection-System" class="project-image-link">
               <div class="project-image">
@@ -412,8 +416,12 @@
                   </div>
               </div>
           </div>
+        </div>    
+          <button class="carousel-btn right">&#10095;</button>
+        </div>  
       </div>
   </section>
+
 
   <!-- PDF Modal -->
   <div id="pdfModal" class="modal">
@@ -490,39 +498,29 @@
   <section class="contact" id="contact">
       <h2 class="heading">Contact <span>Me</span></h2>
 
-      <form action="https://formsubmit.co/58d17c5deb9a471eb242233224b025f7" method="POST">
+      <form action="https://formsubmit.co/phookopatrick202@gmail.com" method="POST">
+
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Portfolio Contact Message">
+        <input type="hidden" name="_template" value="table">
         
-        <!-- 2. Hidden honeypot input (to trap bots) -->
-        <input type="text" name="_honey" style="display:none">
-      
-        <!-- 3. Disable captcha if you don't want it (optional) -->
-        <input type="hidden" name="_captcha" value="true"> 
+        <div class="input-box">
+        <input type="text" name="first_name" placeholder="First Name" required>
+        <input type="text" name="last_name" placeholder="Last Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        </div>
         
-        <!--4. Redirect to thank you page -->
+        <div class="input-box">
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <input type="text" name="subject" placeholder="Subject" required>
+        </div>
+        
+        <textarea name="message" rows="10" placeholder="Your Message" required></textarea>
+        
+        <input type="submit" value="Send Message" class="btn">
+
         <input type="hidden" name="_next" value="https://phookopm.github.io/thank-you.html">
-      
-        <!-- Form Fields -->
-        <div class="input-group">
-          <div class="input-box">
-            <input type="text" name="name" placeholder="First Names" required>
-            <input type="text" name="name" placeholder="Last Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-          </div>
-          <div class="input-box">
-            <input type="tel" name="phone" placeholder="Phone Number" required
-                   pattern="[+]{1}[0-9]{11,14}">
-            <input type="text" name="subject" placeholder="Subject" required>
-          </div>
-        </div>
-      
-        <div class="input-group-2">
-          <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-          
-          <!-- Google reCAPTCHA v2 widget -->
-          <div class="g-recaptcha" data-sitekey="6LcZ03QrAAAAAIzadoaF6B9pE_SmxyJAxyiltI3m"></div>
-      
-          <input type="submit" value="Send Message" class="btn">
-        </div>
+        
       </form>
   </section>
 
@@ -558,5 +556,32 @@
 
   <script src="js/script.js"></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+  <script>
+
+    const track = document.querySelector('.projects-track');
+    const leftBtn = document.querySelector('.carousel-btn.left');
+    const rightBtn = document.querySelector('.carousel-btn.right');
+    
+    let scrollAmount = 0;
+    const scrollStep = 420;
+    
+    rightBtn.addEventListener('click', () => {
+    track.scrollBy({
+    left: scrollStep,
+    behavior: 'smooth'
+    });
+    });
+    
+    leftBtn.addEventListener('click', () => {
+    track.scrollBy({
+    left: -scrollStep,
+    behavior: 'smooth'
+    });
+    });
+    
+    </script>
+
 </body>
 </html>
